@@ -12,9 +12,8 @@ public class Principal {
         Monedas dolarB = API.obtenerMoneda("USD", "BRL");
         Monedas dolarC = API.obtenerMoneda("USD", "COP");
         Monedas dolarD = API.obtenerMoneda("USD", "CLP");
-
         var opcion=0;
-        while(opcion!=7) {
+        while(opcion!=9) {
             System.out.println("=======Valor del dólar=======");
             System.out.printf("Costo dólar -> $%.2f pesos argentinos \n"+
                             "Costo dólar -> $%.2f real brasileño \n" +
@@ -107,7 +106,8 @@ public class Principal {
                             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                             .setPrettyPrinting()
                             .create();
-                    System.out.println(" JSON: " + json1);
+                    String gson1 = json1.toJson(moneda);
+                    System.out.println(" JSON: " + gson1);
 
                 } else {
                     resultado = moneda.convertirDesde(monto);
@@ -115,7 +115,8 @@ public class Principal {
                             .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
                             .setPrettyPrinting()
                             .create();
-                    System.out.println("JSON: " + json2);
+                    String gson2 = json2.toJson(moneda);
+                    System.out.println("JSON: " + gson2);
                 }
                 System.out.printf(" Resultado: %.2f %s%n", resultado, destino);
             } else {
