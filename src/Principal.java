@@ -11,15 +11,16 @@ public class Principal {
         Monedas dolarA = API.obtenerMoneda("USD", "ARS");
         Monedas dolarB = API.obtenerMoneda("USD", "BRL");
         Monedas dolarC = API.obtenerMoneda("USD", "COP");
-
+        Monedas dolarD = API.obtenerMoneda("USD", "CLP");
 
         var opcion=0;
         while(opcion!=7) {
             System.out.println("=======Valor del dólar=======");
             System.out.printf("Costo dólar -> $%.2f pesos argentinos \n"+
                             "Costo dólar -> $%.2f real brasileño \n" +
-                            "Costo dólar -> $%.2f pesos colombianos \n"
-                    ,dolarA.getValor(),dolarB.getValor(),dolarC.getValor());
+                            "Costo dólar -> $%.2f pesos colombianos \n" +
+                            "Costo dólar -> $%.2f pesos Chilenos \n"
+                    ,dolarA.getValor(),dolarB.getValor(),dolarC.getValor(),dolarD.getValor());
             System.out.println("================================");
             System.out.println("*******************Conversión de Monedas***************");
             System.out.println("1 - Dólar a peso Argentino");
